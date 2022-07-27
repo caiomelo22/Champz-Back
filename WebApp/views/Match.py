@@ -28,7 +28,7 @@ class MatchViewSet(viewsets.ModelViewSet):
         match = MatchSerializer(match, context={'request': request})
         return Response(match.data)
 
-    def partial_update(self, request, *args, **kwargs):
+    def update(self, request, *args, **kwargs):
         data = dict(request.data)
         instance = self.queryset.get(id=data['id'])
         instance.goals_participant_1 = data['goals_participant_1']

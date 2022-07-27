@@ -27,7 +27,7 @@ class ParticipantViewSet(viewsets.ModelViewSet):
             participant, context={'request': request})
         return Response(participant.data)
 
-    def partial_update(self, request, *args, **kwargs):
+    def update(self, request, *args, **kwargs):
         try:
             instance = Participant.objects.get(id=kwargs.get('pk'))
         except:
